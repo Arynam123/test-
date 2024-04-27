@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant Review Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/formc.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .sentimeter{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .results {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">Restaurant Review Sentiment Analysis</h2>
+    <form action="{{ url_for('predict') }}" method="post">
+        <div class="form-group">
+            <textarea class="form-control" rows="5" id="message" name="message" placeholder="Enter your review here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+    </form>
+    <br>
+    <div class="results">
+        {% if prediction %}
+            {% if prediction == "1" %}
+                <h4 class="text-center">Worst: {{ prediction }}</h4>
+                <img  class="sentimeter" src="../static/images/results/img1.png" alt="Worst" width = "25%" >
+            {% elif prediction == "2" %}
+                <h4 class="text-center">Bad: {{ prediction }}</h4>
+                <img class="sentimeter" src="../static/images/results/img2.png" alt="Bad" width = "25%" >
+            {% elif prediction == "3" %}
+                <h4 class="text-center">Average: {{ prediction }}</h4>
+                <img  class="sentimeter" src="../static/images/results/img3.png" alt="Average" width = "25%" >
+            {% elif prediction == "4" %}
+                <h4 class="text-center">Good: {{ prediction }}</h4>
+                <img class="sentimeter" src="../static/images/results/img4.png" alt="Good" width = "25%" >
+            {% elif prediction == "5" %}
+                <h4 class="text-center">Excellent: {{ prediction }}</h4>
+                <img class="sentimeter" src="../static/images/results/img5.png" alt="Excellent" width = "25%" >
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

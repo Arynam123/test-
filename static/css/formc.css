@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  /* background-image: url('../images/back.jpg'); Path to your background image */
+  background-size: cover;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #d6d6d6;
+  border-radius: 25px;
+  background-color: #f3f3f3;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #ff6b6b; /* Vibrant red */
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff4d4d; /* Darker red on hover */
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.result-message {
+  font-size: 18px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: #4caf50; /* Vibrant green */
+  color: #fff;
+}
+
+.result-good {
+  background-color: #4caf50; /* Vibrant green */
+}
+
+.result-bad {
+  background-color: #ff6b6b; /* Vibrant red */
+}
+
